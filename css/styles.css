@@ -10,5 +10,21 @@
     border: 1px solid blue;
     display: inline-block;
 
+}
+#banner{
+    width: 1600px;
+    height: 300px;
+    background: pink;
 
 }
+#player1{
+    width: 350px;
+    height: 820px;
+    background: tomato;
+    float: left;
+}
+#container{
+    float: left;
+}
+
+
