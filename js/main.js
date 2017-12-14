@@ -75,7 +75,7 @@ function startGame(){
 
         // display updated decreased time
         $("#timer").text(timeRemaining)
-
+    getPlayer1Score ()
         console.log(timeRemaining)
     }, 1000)
 
@@ -99,13 +99,15 @@ function getScore(){
     $('#player1').text("Fart score:" + totalScore)
 
 }
+
+function getPlayer1Score(){
+
+    
+}
 var $start = $("#startBtn")
 $start.on('click', startGame)
 
-//assign each food fart power
-//on click pic then you got fart power scores
-//where to store the score--> score board--->fart button
-
-// timer: 10sec, decrease the timer by 1 when click "start"
-
+//after player 1 finished the game, store the score 
+//start player 2, finished the game, compared score
+// annouce the winner
 

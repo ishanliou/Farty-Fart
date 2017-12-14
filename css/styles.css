@@ -19,12 +19,20 @@
 }
 #player1{
     width: 350px;
-    height: 820px;
+    height: 410px;
     background: tomato;
     float: left;
+    border: 1px solid gray;
+
 }
 #container{
     float: left;
 }
-
+#player2{
+    width: 350px;
+    height: 410px;
+    background: tomato;
+    float: left;
+    border: 1px solid gray;
+}
 
