@@ -69,7 +69,6 @@ function startGame(){
             // .............
             
          $('.box').off('click')
-
             return
         }
 
@@ -99,13 +98,13 @@ function getScore(){
     $('#player1').text("Fart score:" + totalScore)
 
 }
+
+function clearScore(){
+    totalScore = 0
+    $('#player1').text("Fart score:" + totalScore)
+}
 var $start = $("#startBtn")
 $start.on('click', startGame)
-
-//assign each food fart power
-//on click pic then you got fart power scores
-//where to store the score--> score board--->fart button
-
-// timer: 10sec, decrease the timer by 1 when click "start"
+$start.on('click', clearScore)
 
 
