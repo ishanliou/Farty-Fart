@@ -1,5 +1,7 @@
 //Create a main container and 16 boxes inside of it
 var $timer = $('#timer')
+var player1Score = null
+var player2Score = null
 var totalScore = 0;
 
 var $container = $("#container")
@@ -70,12 +72,25 @@ function startGame(){
             
          $('.box').off('click')
 
+
+         // check who just played, and assign the score accordingly:
+            if(!player1Score && typeof player1Score != "number") {
+                player1Score = Number($('#score').text())
+                // also, display player 1's recorded score...
+                totalScore = 0
+            } else {
+                player2Score = Number($('#score').text())
+                // also display player 2's score
+                
+                // figure out who won here... and announce it!
+            }
+
             return
         }
 
         // display updated decreased time
         $("#timer").text(timeRemaining)
-    getPlayer1Score ()
+    
         console.log(timeRemaining)
     }, 1000)
 
@@ -96,17 +111,18 @@ function getScore(){
     totalScore = totalScore + foodScore
     
     // update text to show new score
-    $('#player1').text("Fart score:" + totalScore)
+    $('#score').text(totalScore)
 
 }
-
-function getPlayer1Score(){
-
-    
+function clearScore(){
+    totalScore.empty()
 }
+
 var $start = $("#startBtn")
 $start.on('click', startGame)
+$start.on('click', clearScore)
 
+// 2 players 
 //after player 1 finished the game, store the score 
 //start player 2, finished the game, compared score
 // annouce the winner
