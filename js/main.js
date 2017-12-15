@@ -1,5 +1,10 @@
 //Create a main container and 16 boxes inside of it
+var $start = $("#startBtn")
 var $timer = $('#timer')
+var $restart = $ ('#restartBtn')
+var player1Score = null
+var player2Score = null
+var currentPlayer = ""
 var totalScore = 0;
 
 var $container = $("#container")
@@ -11,7 +16,7 @@ for (var i=0; i<4; i++){
         $row.append('<div class="box"></div>')
     }
 }
-//push 16 pics into each boxes
+//put 16 pics into each boxes
 function putPics(){
     var $boxes =$('.box')
     $boxes.each(function(index, box){
@@ -47,7 +52,24 @@ function randomInt(myNumber){
   return Math.floor(Math.random() * myNumber)
 }
 
+function setPlayer() {
+    //setting the variable in our memory
+    if (currentPlayer === "player 2") {
+        currentPlayer = "player 1"
+    } else if (currentPlayer === "player 1") {
+        currentPlayer = "player 2"
+    } else if (currentPlayer === '') {
+        currentPlayer = 'player 1'
+    }
+
+    //display on the screen
+    $("#currentPlayer").text(currentPlayer)
+}
+
 function startGame(){
+    setPlayer()
+    // set the current player
+    console.log(currentPlayer)
 
     // we'll use set interval because
     // initial time remaining
@@ -65,8 +87,6 @@ function startGame(){
             console.log("Time is up!")
             $("#timer").text("Time is up!")
             
-            // here is where the code will be to deactivate boxes, and end the round...
-            // .............
             
          $('.box').off('click')
             return
@@ -74,14 +94,11 @@ function startGame(){
 
         // display updated decreased time
         $("#timer").text(timeRemaining)
-
+    
         console.log(timeRemaining)
     }, 1000)
 
-    $('.box').each(function(index, theBox) {
-        var randomFood = foodImgs[randomInt(foodImgs.length - 1)]
-        $(theBox).html('<img score="'+randomFood['score']+'" src="' + imgPath + randomFood['food'] + '.png" class="' + randomFood['food'] + '">')
-    })
+    randomizeImages()
 
     $('.box').one('click', getScore)
 }
@@ -95,8 +112,20 @@ function getScore(){
     totalScore = totalScore + foodScore
     
     // update text to show new score
-    $('#player1').text("Fart score:" + totalScore)
+    updatePlayerScore(totalScore)
+}
 
+function updatePlayerScore(score) {
+    // updates the span on the top
+    Number($('#score').text(score))
+
+    if(currentPlayer === 'player 1') { //update the scores for player 1
+        player1Score = Number($('#score').text())
+        $('#player1').text('Player 1 scores: ' + player1Score)
+    } else if (currentPlayer === 'player 2') { //update the scores for player2
+        player2Score = Number($('#score').text())
+        $('#player2').text('Player 2 scores:' + player2Score)
+    }
 }
 
 function clearScore(){
@@ -106,5 +135,30 @@ function clearScore(){
 var $start = $("#startBtn")
 $start.on('click', startGame)
 $start.on('click', clearScore)
+function randomizeImages() {
+    $('.box').each(function(index, theBox) {
+        var randomFood = foodImgs[randomInt(foodImgs.length - 1)]
+        $(theBox).html('<img score="'+randomFood['score']+'" src="' + imgPath + randomFood['food'] + '.png" class="' + randomFood['food'] + '">')
+    })
+}
 
+function restartPics() {
+putPics().html("")
+putPics()
+}
 
+function restartGame (){
+    randomizeImages()
+    $timer.empty()
+    player1Score = 0
+    $('#player1').text('Player 1 scores: ' + player1Score)
+    player2Score = 0
+    $('#player2').text('Player 2 scores:' + player2Score)
+    totalScore = 0
+    $('#score').text(totalScore)
+    currentPlayer === ''
+    $("#currentPlayer").text(currentPlayer)
+}
+
+$start.on('click', startGame)
+$restart.on('click', restartGame)
