@@ -107,7 +107,7 @@ function startGame(){
                 oopsyFart.play()
 
                 // show message
-                $('#messageBox').find('#copy').text("Good job player 1! Now it's player 2's turn")
+                $('#messageBox').find('#copy').text("Good job player 1! Now it's player 2's turn").css({background:'rgb(233, 125, 125)',color: '#251B44',})
                 totalScore = 0
                 
             } else if(currentPlayer == 'player 2') {
@@ -115,17 +115,20 @@ function startGame(){
                 $('#messageBox').css({
                     'opacity':"1"
                 })
-                $('#messageBox').find('#copy').text("Good job player 2! Let's see who fart big...")
+                $('#messageBox').find('#copy').text("Good job player 2! Let's see who fart big...").css({background:'rgb(233, 125, 125)',color: '#251B44',})
+                totalScore = 0
                 //announce who the winner is
                 longFart.play()
 
                 setTimeout(function(){
                     if (player1Score> player2Score){
                         //alert ("Player 1 is the Fart Master!")
-                        $('#messageBox').find('#copy').text("Player 1 is the Fart Master!")
+                        $('#messageBox').find('#copy').text("Player 1 is the Fart Master!").css({background:'rgb(233, 125, 125)',color: '#251B44',})
+                        totalScore = 0
                     }else {
                         //alert("Player 2, Good job! Do you just fart? ")
-                        $('#messageBox').find('#copy').text("Player 2, Good job! Do you just fart? ") 
+                        $('#messageBox').find('#copy').text("Player 2, Good job! Do you just fart? ").css({background:'rgb(233, 125, 125)',color: '#251B44',})
+                        totalScore = 0
                     }
                 }, 3000)
             }
@@ -162,10 +165,12 @@ function updatePlayerScore(score) {
 
     if(currentPlayer === 'player 1') { //update the scores for player 1
         player1Score = Number($('#score').text())
-        $('#player1Container').text('Player 1 scores: ' + player1Score)
+        $('#player1Container').text('Player 1 scores: ' + player1Score).css({color: '#251B44',})
+        totalScore = 0
     } else if (currentPlayer === 'player 2') { //update the scores for player2
         player2Score = Number($('#score').text())
-        $('#player2Container').text('Player 2 scores:' + player2Score)
+        $('#player2Container').text('Player 2 scores:' + player2Score).css({color: '#251B44',})
+        totalScore = 0
     }
 }
 
