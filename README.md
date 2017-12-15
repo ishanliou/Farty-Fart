@@ -11,7 +11,7 @@ Two players, each to pick farty foods. The more you pick FARTY FOOD , the more y
 ## How to Play:
  
 Each player has 10 seconds to use mouse to select the food that could make biggest fart. Go fast and pick the food causing gas the most. Go big or go home!
-Farty fart [LET'S FART]()
+Farty fart [LET'S FART](https://ishanliou.github.io/Farty-Fart/)
 
 ---
 
