@@ -1,7 +1,10 @@
 //Create a main container and 16 boxes inside of it
+var $start = $("#startBtn")
 var $timer = $('#timer')
+var $restart = $ ('#restartBtn')
 var player1Score = null
 var player2Score = null
+var currentPlayer = ""
 var totalScore = 0;
 
 var $container = $("#container")
@@ -13,7 +16,7 @@ for (var i=0; i<4; i++){
         $row.append('<div class="box"></div>')
     }
 }
-//push 16 pics into each boxes
+//put 16 pics into each boxes
 function putPics(){
     var $boxes =$('.box')
     $boxes.each(function(index, box){
@@ -49,7 +52,24 @@ function randomInt(myNumber){
   return Math.floor(Math.random() * myNumber)
 }
 
+function setPlayer() {
+    //setting the variable in our memory
+    if (currentPlayer === "player 2") {
+        currentPlayer = "player 1"
+    } else if (currentPlayer === "player 1") {
+        currentPlayer = "player 2"
+    } else if (currentPlayer === '') {
+        currentPlayer = 'player 1'
+    }
+
+    //display on the screen
+    $("#currentPlayer").text(currentPlayer)
+}
+
 function startGame(){
+    setPlayer()
+    // set the current player
+    console.log(currentPlayer)
 
     // we'll use set interval because
     // initial time remaining
@@ -67,25 +87,45 @@ function startGame(){
             console.log("Time is up!")
             $("#timer").text("Time is up!")
             
-            // here is where the code will be to deactivate boxes, and end the round...
-            // .............
             
-         $('.box').off('click')
+        
+            // here is where the code will be to deactivate boxes, and end the round...
+            $('.box').off('click')
 
 
          // check who just played, and assign the score accordingly:
-            if(!player1Score && typeof player1Score != "number") {
-                player1Score = Number($('#score').text())
-                // also, display player 1's recorded score...
+        // if(!player1Score && typeof player1Score != "number") {
+        //     player1Score = Number($('#score').text())
+        //     $('#player1').text('Player 1 scores: ' + player1Score)
+        //     // also, display player 1's recorded score...
+        //     totalScore = 0
+        // } else {
+        //     player2Score = Number($('#score').text())
+        //     // also display player 2's score
+        //     $('#player2').text('Player 2 scores: ' + player2Score)
+        //     // figure out who won here... and announce it!
+
+        //     if (player1Score> player2Score){
+        //         alert ("Player 1 is the Fart Master!")
+        //     }else {
+        //         alert("Player 2, Good job! Do you just fart? ")
+        //     }
+        // }
+            if(currentPlayer == 'player 1') {
+                alert("Good job player 1! Now it's player 2's turn")
                 totalScore = 0
-            } else {
-                player2Score = Number($('#score').text())
-                // also display player 2's score
-                
-                // figure out who won here... and announce it!
+            } else if(currentPlayer == 'player 2') {
+                alert("Good job player 2! Let's see who won...")
+
+                //announce who the winner is
+                if (player1Score> player2Score){
+                    alert ("Player 1 is the Fart Master!")
+                }else {
+                    alert("Player 2, Good job! Do you just fart? ")
+                }
             }
 
-            return
+        return
         }
 
         // display updated decreased time
@@ -94,10 +134,7 @@ function startGame(){
         console.log(timeRemaining)
     }, 1000)
 
-    $('.box').each(function(index, theBox) {
-        var randomFood = foodImgs[randomInt(foodImgs.length - 1)]
-        $(theBox).html('<img score="'+randomFood['score']+'" src="' + imgPath + randomFood['food'] + '.png" class="' + randomFood['food'] + '">')
-    })
+    randomizeImages()
 
     $('.box').one('click', getScore)
 }
@@ -111,19 +148,46 @@ function getScore(){
     totalScore = totalScore + foodScore
     
     // update text to show new score
+    updatePlayerScore(totalScore)
+}
+
+function updatePlayerScore(score) {
+    // updates the span on the top
+    Number($('#score').text(score))
+
+    if(currentPlayer === 'player 1') { //update the scores for player 1
+        player1Score = Number($('#score').text())
+        $('#player1').text('Player 1 scores: ' + player1Score)
+    } else if (currentPlayer === 'player 2') { //update the scores for player2
+        player2Score = Number($('#score').text())
+        $('#player2').text('Player 2 scores:' + player2Score)
+    }
+}
+
+function randomizeImages() {
+    $('.box').each(function(index, theBox) {
+        var randomFood = foodImgs[randomInt(foodImgs.length - 1)]
+        $(theBox).html('<img score="'+randomFood['score']+'" src="' + imgPath + randomFood['food'] + '.png" class="' + randomFood['food'] + '">')
+    })
+}
+
+function restartPics() {
+putPics().html("")
+putPics()
+}
+
+function restartGame (){
+    randomizeImages()
+    $timer.empty()
+    player1Score = 0
+    $('#player1').text('Player 1 scores: ' + player1Score)
+    player2Score = 0
+    $('#player2').text('Player 2 scores:' + player2Score)
+    totalScore = 0
     $('#score').text(totalScore)
-
-}
-function clearScore(){
-    totalScore.empty()
+    currentPlayer === ''
+    $("#currentPlayer").text(currentPlayer)
 }
 
-var $start = $("#startBtn")
 $start.on('click', startGame)
-$start.on('click', clearScore)
-
-// 2 players 
-//after player 1 finished the game, store the score 
-//start player 2, finished the game, compared score
-// annouce the winner
-
+$restart.on('click', restartGame)
