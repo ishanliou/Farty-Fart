@@ -3,7 +3,7 @@
 
 ---
 
-![]()
+![](fartyFart.png)
 
 Two players, each to pick farty foods. The more you pick FARTY FOOD , the more you fart! Pick smart, pick quick and fart BIG!
  
@@ -24,17 +24,15 @@ Farty fart [LET'S FART]()
  
 ## User Stories
  
- - As a user, I am greeted with two Fart Masters-  French bulldogs on each side of the game borad (Player1 and Player2). All the cards are in the center of board face down.
- - As a user, I learn I have 10 seconds to pick the as many as possile foods and also the foods casue the most gas.
+ - As a user, I am greeted with two Fart Masters-  French bulldogs on each side of the game borad (Player1 and Player2).
+ - As a user, I have 10 seconds to pick the as many as possile foods and also the foods casue the most gas.
  - As a user, I can click on "Start" and all the cards flip to show farty foods.
- - As a user, I select the farty foods in 10 seconds. When time is up, the "Fart" button on the player side will be highlighted. 
- - As a user, I click "Fart" then the French bulldog  turn around with the butt facing me and start farting.
+ - As a user, I select the farty foods in 10 seconds. When time is up. Next player's turn.
+ - 
  - As a user, another user clicks "Start" to follow the exact same process.
- - As a user, after player2 get farted, announce the winner.
+ - As a user, after player2 get fart score, announce the winner.
 
 ---
-## Future Development
 
-## Minimum Viable Product
 
 
