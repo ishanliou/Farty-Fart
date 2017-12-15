@@ -5,32 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Farty Fart</title>
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
     <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
-   
   
 </head>
 <body>
-<div id="banner">
-    <div id="fartyFart"></div>
+<div id="gameContainer">
+    
+    <div id="banner">
+        <div id="title">Farty Fart</div>
+        <h2 id="howToPlay">The two players game. Hit the start button to pick farty food!</h2>
+    </div>
 
-</div>
-<div id="control">
-    <button id="startBtn">Start</button>
-    <button id="restartBtn">Restart</button>
-    <h2 id="timer"></h2>
-    <h3>Fart Score: <span id="score">0</span></h3>
-</div>
-<div id="currentPlayerContainer"><h2>Current Player: <span id="currentPlayer">Player 1</span></h2></div>
-<div id="container"></div>
-<div id="player1">
+    
+    <div id="control">
+        <div id="btnContainer">
+            <button id="startBtn">Start</button>
+            <button id="restartBtn">Restart</button>
+        </div>
+        <div id="playerContainer">Player: Player 1</div>
+        <div id="scoreContainer">Fart Score: <span id="score">0</span></div>
+        <div id="timerContainer">Time:<span id="timer"></span></div>
+    </div>
 
-</div>
-<div id="player2"></div>
-
+    <div id="player1Container">
+    </div>
+    <div id="container"></div>
+    <div id="player2Container"></div>
+    <!--
+    <div id="currentPlayerContainer"><h2>Current Player: <span id="currentPlayer">Player 1</span></h2></div>
+    -->
+    <div id="messageBox">
+        <div id="copy"></div>
+        <button id="closeBtn">Close</button>
+    </div>
+</div><!-- gameContainer end -->
 
 
 

@@ -1,21 +1,145 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo', cursive;
+}
+
 .box{
-    width: 200px;
-    height: 200px;
-    border: 1px solid red;
+    width: 205px;
+    height: 150px;
 
 }
 
 .row{
-    height: 200px;
-    border: 1px solid blue;
+    height: 150px;
     display: inline-block;
 
 }
-#banner{
-    width: 1600px;
-    height: 600px;
-    background: pink;
 
+img{
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+}
+
+#gameContainer{
+    width: 1280px;
+    height: 800px;
+    margin: 0 auto;
+    background: #666;
+}
+
+#banner{
+    width: 100%;
+    height: 170px;
+    background:#4BC7EB;
+}
+
+#messageBox{
+    width: 300px;
+    height: 150px;
+    background: rgb(255, 255, 255);
+    position: relative;
+    top: -50px;
+    left: 490px;
+    opacity: 0;
+}
+#closeBtn{
+    position: absolute;
+    top: 133px;
+    left: 127px;
+}
+#copy{
+    position: absolute;
+    width: 300px;
+}
+
+#control{
+    width: 1280px;
+    height: 30px;
+    background: rgb(14, 162, 150);
+}
+
+#btnContainer{
+    box-sizing: border-box;
+    padding: 4px 0px 0px 0px;
+    width: 320px;
+    height: 30px;
+    float: left;
+}
+#playerContainer{
+    padding: 4px 0px 0px 0px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 320px;
+    height: 30px;
+    float: left;
+    background: #81C341;
+    color: white;
+}
+#scoreContainer{
+    padding: 4px 0px 0px 0px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 320px;
+    height: 30px;
+    float: left;
+    background: rgb(92, 92, 121);
+    color: white;
+}
+#timerContainer{
+    padding: 4px 0px 0px 0px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 320px;
+    height: 30px;
+    float: left;
+    background: peru;
+    color: white;
+}
+
+#player1Container{
+    width: 230px;
+    height: 600px;
+    background: rgb(233, 125, 125);
+    background-position: center; 
+    background-image: url("../imgs/cooper.png");
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    float: left;
+}
+
+#container{
+    width: 820px;
+    height: 600px;
+    float: left;
+}
+
+#player2Container{
+    width: 230px;
+    height: 600px;
+    background: rgb(233, 125, 125);
+    background-position: center; 
+    background-image: url("../imgs/butler.png");
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    float: left;
+}
+
+#title{
+    font-family: 'Baloo', cursive;
+    font-size: 3em;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 12px 0px 0px 0px;
+    color: wheat;
+}
+#howToPlay{
+    text-align: center;
+    color: wheat;
+    padding: 0px 0px 0px 5px;
+   
+   
 }
 #player1{
     width: 350px;
@@ -24,9 +148,6 @@
     float: left;
     border: 1px solid gray;
 
-}
-#container{
-    float: left;
 }
 #player2{
     width: 350px;
