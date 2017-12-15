@@ -88,8 +88,44 @@ function startGame(){
             $("#timer").text("Time is up!")
             
             
-         $('.box').off('click')
-            return
+        
+            // here is where the code will be to deactivate boxes, and end the round...
+            $('.box').off('click')
+
+
+         // check who just played, and assign the score accordingly:
+        // if(!player1Score && typeof player1Score != "number") {
+        //     player1Score = Number($('#score').text())
+        //     $('#player1').text('Player 1 scores: ' + player1Score)
+        //     // also, display player 1's recorded score...
+        //     totalScore = 0
+        // } else {
+        //     player2Score = Number($('#score').text())
+        //     // also display player 2's score
+        //     $('#player2').text('Player 2 scores: ' + player2Score)
+        //     // figure out who won here... and announce it!
+
+        //     if (player1Score> player2Score){
+        //         alert ("Player 1 is the Fart Master!")
+        //     }else {
+        //         alert("Player 2, Good job! Do you just fart? ")
+        //     }
+        // }
+            if(currentPlayer == 'player 1') {
+                alert("Good job player 1! Now it's player 2's turn")
+                totalScore = 0
+            } else if(currentPlayer == 'player 2') {
+                alert("Good job player 2! Let's see who won...")
+
+                //announce who the winner is
+                if (player1Score> player2Score){
+                    alert ("Player 1 is the Fart Master!")
+                }else {
+                    alert("Player 2, Good job! Do you just fart? ")
+                }
+            }
+
+        return
         }
 
         // display updated decreased time
@@ -128,13 +164,6 @@ function updatePlayerScore(score) {
     }
 }
 
-function clearScore(){
-    totalScore = 0
-    $('#player1').text("Fart score:" + totalScore)
-}
-var $start = $("#startBtn")
-$start.on('click', startGame)
-$start.on('click', clearScore)
 function randomizeImages() {
     $('.box').each(function(index, theBox) {
         var randomFood = foodImgs[randomInt(foodImgs.length - 1)]
