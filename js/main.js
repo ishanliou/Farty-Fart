@@ -32,7 +32,6 @@ function putPics(){
 putPics()
 
 //click start btn then 16 food pics replace the fart pic
-//var foodImgs =['apple','avocado', 'banana', 'beans', 'bread', 'broccoli', 'cabbage','candy','celery', 'chips','fish', 'onion', 'pineapple', 'shrimp', 'soda']
 var foodImgs = [{food:"apple", score:4},
                 {food:"banana", score:3},
                 {food:"beans", score:10}, 
@@ -97,28 +96,6 @@ function startGame(){
         
             // here is where the code will be to deactivate boxes, and end the round...
             $('.box').off('click')
-
-            
-
-
-         // check who just played, and assign the score accordingly:
-        // if(!player1Score && typeof player1Score != "number") {
-        //     player1Score = Number($('#score').text())
-        //     $('#player1').text('Player 1 scores: ' + player1Score)
-        //     // also, display player 1's recorded score...
-        //     totalScore = 0
-        // } else {
-        //     player2Score = Number($('#score').text())
-        //     // also display player 2's score
-        //     $('#player2').text('Player 2 scores: ' + player2Score)
-        //     // figure out who won here... and announce it!
-
-        //     if (player1Score> player2Score){
-        //         alert ("Player 1 is the Fart Master!")
-        //     }else {
-        //         alert("Player 2, Good job! Do you just fart? ")
-        //     }
-        // }
         
             if(currentPlayer == 'player 1') {
                 //alert("Good job player 1! Now it's player 2's turn")
@@ -212,18 +189,7 @@ function restartGame (){
     $('#score').text(totalScore)
     currentPlayer = ''
     $("#playerContainer").text("player 1")
-    /*
-    randomizeImages()
-    $timer.empty()
-    player1Score = 0
-    $('#player1').text('Player 1 scores: ' + player1Score)
-    player2Score = 0
-    $('#player2').text('Player 2 scores:' + player2Score)
-    totalScore = 0
-    $('#score').text(totalScore)
-    currentPlayer === ''
-    $("#currentPlayer").text(currentPlayer)
-    */
+    
 }
 
 $start.on('click', startGame)
