@@ -33,5 +33,22 @@ Farty fart [LET'S FART](https://ishanliou.github.io/Farty-Fart/)
 
 ---
 
+## MVP
+
+- 16 Choices of foods
+- Switch player's scores between 2 players
+- Annoumce winner after sencond player finished
+- Randomize farty food
+---
+
+## Dream Features
+
+- Dog animations
+- Foods animations
+- Cards highlighted when clicked
+- Enter player's names
+
+
+
 
 
