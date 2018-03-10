@@ -11,7 +11,7 @@ var fart = new Audio('sounds/fart.mp3')
 var longFart = new Audio('sounds/longFart.mp3')
 
 var $container = $("#container")
-$container.css({width:"820px", height:"600px", background:"wheat"})
+// $container.css({width:"820px", height:"600px", background:"wheat"})
 for (var i=0; i<4; i++){
     $container.append(`<div class="row" id="row${i}"></div>`)
     var $row = $(`#row${i}`)
@@ -107,7 +107,7 @@ function startGame(){
                 oopsyFart.play()
 
                 // show message
-                $('#messageBox').find('#copy').text("Good job player 1! Now it's player 2's turn")
+                $('#messageBox').find('#copy').text("Good job player 1! Now press START to start player 2")
                 totalScore = 0
                 
             } else if(currentPlayer == 'player 2') {

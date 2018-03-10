@@ -63,7 +63,7 @@ img{
 
 #btnContainer{
     box-sizing: border-box;
-    padding: 4px 0px 0px 0px;
+    /* padding: 4px 0px 0px 0px; */
     width: 320px;
     height: 30px;
     float: left;
@@ -105,7 +105,7 @@ img{
 #player1Container{
     width: 230px;
     height: 600px;
-    background: rgb(233, 125, 125);
+    background: #FFCE1E;
     background-position: center; 
     background-image: url("../imgs/cooper.png");
     background-repeat: no-repeat;
@@ -117,12 +117,13 @@ img{
     width: 820px;
     height: 600px;
     float: left;
+    background-color: white;
 }
 
 #player2Container{
     width: 230px;
     height: 600px;
-    background: rgb(233, 125, 125);
+    background: #50C5D0;
     background-position: center; 
     background-image: url("../imgs/butler.png");
     background-repeat: no-repeat;
@@ -177,16 +178,24 @@ img{
     border-radius: 12px;
     margin: 10px 10px 10px 30px;
     font-size: 24px;
-    background-color: #EE2524
+    /* background-color: #EE2524; */
+    background-image: url("../btn-start.png");
+    background-size: 100px 80px;
 }
 
+#startBtn:hover{
+    background-color: #EE2524;
+}
+
+
 #restartBtn{
-    width: 100px;
+    width: 100px;               
     height: 80px;
     border-radius: 12px;
     margin: 10px 10px 10px 30px;
     font-size: 24px;
     background-color:white;
-    border: #EE2524
+    background-image: url("../btn-reset.png");
+    background-size: 100px 80px;
 }
 
