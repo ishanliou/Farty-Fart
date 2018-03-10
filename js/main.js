@@ -180,16 +180,16 @@ function randomizeImages() {
 
 function restartGame (){
     putPics()
-    $timer.empty()
-    player1Score = 0
-    $('#player1Container').text('Player 1 scores: ' + player1Score)
-    player2Score = 0
-    $('#player2Container').text('Player 2 scores:' + player2Score)
-    totalScore = 0
-    $('#score').text(totalScore)
-    currentPlayer = ''
-    $("#playerContainer").text("player 1")
-    
+        $timer.empty()
+            player1Score = 0
+                $('#player1Container').text('Player 1 scores: ' + player1Score)
+            player2Score = 0
+                $('#player2Container').text('Player 2 scores:' + player2Score)
+            totalScore = 0
+                $('#score').text(totalScore)
+            currentPlayer = ''
+                $("#playerContainer").text("player 1")
+            
 }
 
 $start.on('click', startGame)
