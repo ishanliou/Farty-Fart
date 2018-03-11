@@ -102,7 +102,7 @@ function startGame(){
                 // show message box
                 
                 $('#messageBox').css({
-                    'opacity':'1', 
+                    'opacity':'0.7', 
                 })
                 oopsyFart.play()
 
@@ -113,7 +113,7 @@ function startGame(){
             } else if(currentPlayer == 'player 2') {
                 //alert("Good job player 2! Let's see who won...")
                 $('#messageBox').css({
-                    'opacity':"1"
+                    'opacity':"0.7"
                 })
                 $('#messageBox').find('#copy').text("Good job player 2! Let's see who fart big...")
                 //announce who the winner is
