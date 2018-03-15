@@ -26,7 +26,7 @@ function putPics(){
     $boxes.each(function(index, box){
         console.log(index, box)
         var $b = $(box)
-        $b.append('<img src="fart2.png" class="fart" width="150" height="150"></img>')
+        $b.append('<img src="./imgs/fart2.png" class="fart" width="150" height="150"></img>')
     })
 }
 putPics()
