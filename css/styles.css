@@ -8,13 +8,11 @@ body{
 .box{
     width: 205px;
     height: 150px;
-
 }
 
 .row{
     height: 150px;
     display: inline-block;
-
 }
 
 img{
@@ -48,6 +46,7 @@ img{
     font-size: 24px;
     display: none;
 }
+
 #closeBtn{
     position: absolute;
     top: 114px;
@@ -57,6 +56,7 @@ img{
     border-radius: 8px;
     background-color: white;
 }
+
 #copy{
     position: absolute;
     width: 500px;
@@ -76,6 +76,7 @@ img{
     height: 30px;
     float: left;
 }
+
 #playerContainer{
     padding: 20px 0px 0px 0px;
     box-sizing: border-box;
@@ -88,6 +89,7 @@ img{
     font-size: 30px;
     line-height: 60px;
 }
+
 #scoreContainer{
     padding: 20px 0px 0px 0px;
     box-sizing: border-box;
@@ -96,10 +98,10 @@ img{
     height: 100px;
     float: left;
     font-size: 30px;
-    /* background: rgb(92, 92, 121); */
     color: white;
     line-height: 60px;
 }
+
 #timerContainer{
     padding: 20px 0px 0px 0px;
     box-sizing: border-box;
@@ -155,7 +157,6 @@ img{
 }
 
 #title{
-    /* font-family: 'Baloo', cursive; */
     font-family: 'Montserrat', sans-serif;
     font-size: 3em;
     text-align: center;
@@ -163,6 +164,7 @@ img{
     padding: 12px 0px 0px 0px;
     color: wheat;
 }
+
 #howToPlay{
     text-align: center;
     color:rgb(45, 45, 45);
@@ -171,14 +173,15 @@ img{
     word-wrap: break-word; 
     margin-bottom: 50px;
 }
+
 #player1{
     width: 350px;
     height: 410px;
     background: tomato;
     float: left;
     border: 1px solid gray;
-
 }
+
 #player2{
     width: 350px;
     height: 410px;
@@ -209,7 +212,6 @@ img{
 #startBtn:hover{
     background-color: #EE2524;
 }
-
 
 #restartBtn{
     width: 100px;               
